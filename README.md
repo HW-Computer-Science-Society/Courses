@@ -53,3 +53,7 @@ The exam will cover all aspects of the course for which there are learning mater
 • NewSQL
 
 • Web of Data
+
+
+
+![timetable](images/timetable.png?raw=true "Title")
