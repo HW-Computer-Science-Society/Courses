@@ -3,7 +3,7 @@
 
 Compilation of solutions for unassessed labs, quizzes and past papers which all years and future years can use.
 
-*ontributions via collaboration and multiple solutions are welcomed.*
+*Contributions via collaboration and multiple solutions are welcomed.*
 
 
 ## Topics:
