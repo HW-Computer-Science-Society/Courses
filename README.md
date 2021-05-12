@@ -55,5 +55,6 @@ The exam will cover all aspects of the course for which there are learning mater
 • Web of Data
 
 
+## Timetable:
 
 ![timetable](images/timetable.png?raw=true "Title")
