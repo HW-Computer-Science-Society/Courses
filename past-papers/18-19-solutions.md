@@ -151,6 +151,45 @@ Q1cv) SELECT * FROM T1 <br/> WHERE t1.id NOT IN (SELECT id from T2);
 
 ![question two](images/18-19-2.png?raw=true "Title")
 
+Q2a) What is a database index?
+
+A database index is an additional data stucture which allows fast retrieval/access of indexed fields within the database without the need o search through all the data with every lookup. The cost of this speediness is that the database index data structure requires additional writes & more storage space to maintain and is not ideal for large amounts of data.
+
+-----
+
+Q2b) What is an ERD and what does it show?
+
+An ERD (Entity Relationship Diagram) are used to show the design of a database, more specifically it captures the set of entities from a database and the relationships associated with them and through this the diagram is able to show the logical structure of the database.
+
+-----
+
+Q2c) What is a weak entity? Include examples.
+
+A weak entity is a type of entity which depends on the existance of a strong entity. These weak entities cannot be identified by their own atttributes and instead must rely on the key attributes of a related entity set (strong entity). An example of a weak entity could be that a room only exists if the building where the room is located exists, another example could be that a bank account can't exist without the existance of the associated bank branch.
+
+-----
+
+Q2d) [WIP]
+
+-----
+
+Q2e) Take a look at the following database relation. What are the issues with it?
+
+| *id* | name   | dob        | deptNo | deptName
+| --- | ------- | ---------- | ------ | --------
+| 100 | John Pi | 01/04/1978 | 2  | Marketing
+| 101 | Sarah Toms | 14/12/1985 | 2  | Marketing
+| 102 | Tim Law | 01/04/1978 | 5 | HR
+| 103 | Mary White | 01/04/1978 | 5 | HR
+
+Names should probably be split into firstName & secondName to make querying the database a little bit easier. There is also duplicated data/redundancy, this can lead to errors such as when updating values like changing HR to Human Resources, this can be fixed by using a foreign key on the department numbers and a seperate table for department names.
+
+-----
+
+Q2f) [WIP]
+
+-----
+
 ![question three one](images/18-19-3.1.png?raw=true "Title")
 
 ![question three two](images/18-19-3.2.png?raw=true "Title")
