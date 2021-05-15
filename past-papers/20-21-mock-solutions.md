@@ -17,7 +17,7 @@ Question 2:
 
 What does the S stand for in RDBMS? 
 
-Answer: System
+Answer: system
 
 ---
 
