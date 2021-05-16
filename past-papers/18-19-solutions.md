@@ -256,6 +256,8 @@ Q3c ii) Write an XPath expression to find the sort code for the Heriot-Watt bran
 
 <code>/bank_accounts/account/branch[//branch_name="Heriot-Watt"]/sort_code</code>
 
+-----
+
 ![question four](images/18-19-4.png?raw=true "Title")
 
 Q4a) What is a serialisable schedule?
@@ -282,15 +284,15 @@ The graph is cyclic, therefore the schedule is not serialisbale according to the
 
 ii) Explain the acquisition of locks using classical 2 phase locking and the resulting problem (refer to the step numbers to state when locks are acquired). 
 
-| step | T1 | T2 | 
-| ----- | ----- | ----- |
-| 1 | read V | |
-| 2 | | read W |
-| 3 | update V | |
-| 4 | | read V |
-| 5 | write V | |
-| 6 | | update V |
-| 7 | | write V |
+| step | T1 | T2 
+| ----- | ----- | ----- 
+| 1 | read V | 
+| 2 | | read W 
+| 3 | update V | 
+| 4 | | read V 
+| 5 | write V | 
+| 6 | | update V 
+| 7 | | write V 
 
 1. step: T1 acquires s-lock on V. 
 2. step: T2 acquires s-lock on W. 
