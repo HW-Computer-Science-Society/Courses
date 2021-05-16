@@ -192,6 +192,21 @@ Q2f) [WIP]
 
 ![question three one](images/18-19-3.1.png?raw=true "Title")
 
+Q3ai) Projection(animalID, dateOfTreatment, amount)  
+                        |
+Selection(A.animalID = T.animalID)
+                        |
+                        X
+            |                           |
+Selection(breed='Alsation')     Projection(animalID)
+            |                           |
+Selection(amount > 50)              <ins>Treatment</ins>
+            |       
+Projection(animalID, date, amount)
+            |
+    <ins>Animal</ins>
+
+    
 ![question three two](images/18-19-3.2.png?raw=true "Title")
 
 ![question four](images/18-19-4.png?raw=true "Title")
