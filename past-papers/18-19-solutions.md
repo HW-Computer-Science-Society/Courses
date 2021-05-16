@@ -193,7 +193,7 @@ Q2f) [WIP]
 ![question three one](images/18-19-3.1.png?raw=true "Title")
 
 Q3ai) Projection(animalID, dateOfTreatment, amount)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ensp;|  
 Selection(A.animalID = T.animalID)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X  
