@@ -283,6 +283,7 @@ The graph is cyclic, therefore the schedule is not serialisbale according to the
 ii) Explain the acquisition of locks using classical 2 phase locking and the resulting problem (refer to the step numbers to state when locks are acquired). 
 
 | step | T1 | T2 | 
+| ----- | ----- | ----- |
 | 1 | read V | |
 | 2 | | read W |
 | 3 | update V | |
