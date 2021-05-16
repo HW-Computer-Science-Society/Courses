@@ -30,8 +30,10 @@ Q1b) What are the different user roles associated with a database system? For ea
 ----
 
 Q1c) Consider the following Java statements.  
-<code>String username = myTextField.getText();  
-String query = "SELECT * FROM Users WHERE username = '" + username + "'";</code>  
+```
+String username = myTextField.getText();  
+String query = "SELECT * FROM Users WHERE username = '" + username + "'"; 
+```  
 
 i) Describe a malicious attack that could be used to gain access to the database. 
 
@@ -112,7 +114,7 @@ Q3a) i) What is a transaction?
 
 A transaction is a series of operations to perform a task (= logical unit of work) that takes the database from one consistent state to another. (The database is in a consistent state if it satisfies the constraints specified in the relational schema)
 
-ii) What porperties does the Transaction Manager maintain? 
+ii) What properties does the Transaction Manager maintain? 
 
 * Atomicity: all actions complete or none
 * Consistency: database finishes in a consistent state
