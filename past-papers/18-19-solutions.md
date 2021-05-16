@@ -304,8 +304,21 @@ ii) Explain the acquisition of locks using classical 2 phase locking and the res
 
 The resulting problem is a 'dirty-read' problem. T2 will read the update value of V instead of the original (step 6). 
 
+----
 
------
+Q4c i) What is online analytic processing (OLAP) and what is it used for? 
+
+OLAP is an approach to anwer analytical queries swiftly. It is used by knowledge workers such as executives, managers and analysts. It is used for strategic queries and enables complex aggregates. It provides a summarised and multidimensional view of data. 
+
+ii) Explain why a separate data warehouse is needed from the operational databases of a company. 
+
+A separate data warehouse is needed because opartional data is not suitable to guide strategic decisions. Operational data is volatile (structured for OLTP) and the quires would have a very long execution time which would interfere with operational transactions. 
+
+iii) Explain the steps involved in creating a data warehouse. 
+
+1. Extraction: Retrieve data from all data sources; add-on to operational system
+2. Transformation: convert values to common format, integrate across sources
+3. Load: store integrated data in warehouse
 
 
 
