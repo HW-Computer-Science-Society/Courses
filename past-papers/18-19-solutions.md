@@ -169,7 +169,9 @@ A weak entity is a type of entity which depends on the existance of a strong ent
 
 -----
 
-Q2d) [WIP]
+Q2d) Which two data models are used to represent geospatial data in a spatial database? Explain each data model and give examples of what they are suited to modelling.
+
+The two data models which represent geospatial data within a spatial database are the vector and raster data models. The vector data model uses discrete points, lines and polygons to represent geospatial data, this data model takes an object based approach to real world objects/features and is best suited to representing discreet objects. The raster data model is represented as a matrix of square cells where each cell is indexed by row and column numbers, it shows points of interest within single cells, lines with sequences of neighbouring cells and polygons through collections of contiguous cells, this data model has became the norm for representing spatial data and is good for showing man-made and natural formations in a grid/cell format.
 
 -----
 
@@ -186,7 +188,9 @@ Names should probably be split into firstName & secondName to make querying the 
 
 -----
 
-Q2f) [WIP]
+Q2f) What is a database VIEW and how can it provide security?
+
+Database VIEWS are virtual tables which are built up using queries, they dont hold any data as the data is instead stored in base relations. These VIEWS are usually used for security purposes such as hiding sensitive data within the database from certain users & acts as a real table on which queries can be run with no direct access to the real data set hence keeping it protected.
 
 -----
 
