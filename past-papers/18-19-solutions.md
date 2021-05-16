@@ -192,9 +192,141 @@ Q2f) [WIP]
 
 ![question three one](images/18-19-3.1.png?raw=true "Title")
 
+Q3ai) Projection(animalID, dateOfTreatment, amount)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ensp;|  
+Selection(A.animalID = T.animalID)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X  
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|  
+Selection(breed='Alsation')     Projection(animalID)  
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|  
+Selection(amount > 50)              <ins>Treatment</ins>  
+&nbsp;&nbsp;&nbsp;|         
+Projection(animalID, date, amount)  
+&nbsp;&nbsp;&nbsp;|  
+    <ins>Animal</ins>  
+
+
+-----
+
+Q3a ii) An index is available for the breed column of the Animal table. Explain how this information is used by the optimizer.
+
+It reduces the disk accesses required. 
+
+-----
+
+Q3b) Describe two advantages and two limitations of the relational model.
+
+Advantages of the relational model:
+- strong theoretical foundation (underlying algebra)
+- data independence
+- closed world assumption
+
+Disadvantages of the relational model:
+- limited operations (eg. no spatial or temporal operators)
+- transactions lead to blocking
+- hard to distribute
+
+-----
+
 ![question three two](images/18-19-3.2.png?raw=true "Title")
 
+
+Q3c i) Below is an XML Schema for a bank. Write a valid XML document containing one account that conforms with the above schema. 
+
+```
+<bank_accounts>
+    <account>
+        <account_number>12345678</account_number>
+        <branch>
+            <sort_code>123456</sort_code>
+            <branch_name>BankBranch</branch_name>
+        </branch>
+        <given_name>Milly</given_name>
+        <middle_names>Bobby</middle_names>
+        <family_name>Brown</family_name>
+        <balance>1234.56</balance>
+    </account>
+</bank_accounts>
+```
+
+-----
+
+Q3c ii) Write an XPath expression to find the sort code for the Heriot-Watt branch. 
+
+<code>/bank_accounts/account/branch[//branch_name="Heriot-Watt"]/sort_code</code>
+
+-----
+
 ![question four](images/18-19-4.png?raw=true "Title")
+
+Q4a) What is a serialisable schedule?
+
+Interleaving of operations from more than one transaction, in a way that it appears that one transaction took place before another. 
+
+-----
+
+Q4b) Consider the following sequence of operations of transactions T1 and T2. 
+1. T1 reads value V
+2. T2 reads value W
+3. T1 deducts 1 from V
+4. T2 reads value V
+5. T1 writes V
+6. T2 adds the value of W to V
+7. T2 writes V
+
+i) Draw a serialisability graph to show why the sequence of operations is not serialisable? Stat the reason for each edge in the graph and the property of the graph that makes it not serialisable. 
+
+Graph: T1 ---e1---> T2 ---e2---> T1  
+Edge e1 added because the read operation of T2 follows the update operation of T1 on V. 
+Edge e2 added because the write operation of T1 follows the read operation of T2 on V.  
+The graph is cyclic, therefore the schedule is not serialisbale according to the Serialisability Theorem. 
+
+-----
+
+ii) Explain the acquisition of locks using classical 2 phase locking and the resulting problem (refer to the step numbers to state when locks are acquired). 
+
+| step | T1 | T2  
+| ----- | ----- | -----  
+| 1 | read V |  
+| 2 | | read W  
+| 3 | update V |  
+| 4 | | read V  
+| 5 | write V |  
+| 6 | | update V  
+| 7 | | write V  
+
+1. step: T1 acquires s-lock on V. 
+2. step: T2 acquires s-lock on W. 
+3. step: T1 acquires x-lock on V. 
+4. step: T2 blocked acquiring s-lock on V. 
+5. step: T1 writes V, unlock V. 
+6. step: T2 from step 4 can resume, acquire x-lock on V. 
+7. step: T2 writes V, unlock V and W. 
+
+The resulting problem is a 'dirty-read' problem. T2 will read the update value of V instead of the original (step 6). 
+
+----
+
+Q4c i) What is online analytic processing (OLAP) and what is it used for? 
+
+OLAP is an approach to anwer analytical queries swiftly. It is used by knowledge workers such as executives, managers and analysts. It is used for strategic queries and enables complex aggregates. It provides a summarised and multidimensional view of data.
+
+----
+
+ii) Explain why a separate data warehouse is needed from the operational databases of a company. 
+
+A separate data warehouse is needed because opartional data is not suitable to guide strategic decisions. Operational data is volatile (structured for OLTP) and the quires would have a very long execution time which would interfere with operational transactions. 
+
+----
+
+iii) Explain the steps involved in creating a data warehouse. 
+
+1. Extraction: Retrieve data from all data sources; add-on to operational system
+2. Transformation: convert values to common format, integrate across sources
+3. Load: store integrated data in warehouse
+
+
 
 
 
