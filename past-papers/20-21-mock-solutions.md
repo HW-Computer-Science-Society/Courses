@@ -176,4 +176,6 @@ Which of the  optimization steps should be applied to the following query plan?
 
 ![image](https://user-images.githubusercontent.com/65869535/117823287-38d73100-b265-11eb-999c-7799280bd6c0.png)
 
-Answer: [NOT FINISHED YET]
+Answer: Push selection; Index lookup instead of table scan; Introduce projection.  
+
+Explanation: In this case, the Animal table is a lot larger than the Treatment table so we would keep it on the left of the join operation. This means that we cannot use the nested loops join, as the index look up needs to be the inner relation. Therefore, we would push the selection down and then introduce an index look up on the Animal table rather than a full table scan. Finally, to make things smaller we would introduce projections.
