@@ -9,8 +9,8 @@ Compilation of solutions for unassessed labs, quizzes and past papers which all 
 ## Topics:
 The exam will cover all aspects of the course for which there are learning materials. This includes topics that were not necessarily covered in the online sessions.
 
-![syllabys](images/syllabus.png?raw=true "Title")
+![syllabus](syllabus.png?raw=true "Title")
 
 ## Timetable:
 
-![timetable](images/timetable.png?raw=true "Title")
+![timetable](timetable.png?raw=true "Title")
